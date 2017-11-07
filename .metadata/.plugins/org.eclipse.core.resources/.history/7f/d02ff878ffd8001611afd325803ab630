@@ -1,0 +1,139 @@
+import java.util.Iterator;
+
+import org.junit.Test;
+
+/**
+ * 
+ */
+
+/**
+ * @author Chris Paxton
+ *
+ */
+public class TwoPartCircularDoublyLinkedDequeTest {
+	@Test
+	public void normalTest(){
+		TwoPartCircularDoublyLinkedDeque<Integer> deque = new TwoPartCircularDoublyLinkedDeque<>();
+		System.out.println(deque);
+		
+		deque.addToFront(3);
+		deque.addToFront(4);
+		deque.addToFront(1);
+		deque.addToFront(2);
+		deque.addToFront(6);
+		deque.addToFront(5);
+		
+		
+		deque.addToBack(11);
+		deque.addToBack(16);
+		deque.addToBack(12);
+		deque.addToBack(13);
+		deque.addToBack(14);
+		deque.addToBack(15);
+		
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+		
+		System.out.println();
+		
+		System.out.println(deque.removeBack());
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+
+		System.out.println();
+		
+		System.out.println(deque.removeFront());
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+		
+		System.out.println();
+		
+		deque.addToFront(15);
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+
+		System.out.println();
+		
+		deque.addToBack(15);
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+
+		System.out.println();
+		
+		deque.clear();
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+		
+		System.out.println();
+		
+		deque.addToFront(12);
+		System.out.println(deque);
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		System.out.println("Is Empty? " + deque.isEmpty());
+		
+		System.out.println("\nNormal Iterator");
+		
+		deque.addToFront(3);
+		deque.addToFront(4);
+		deque.addToFront(1);
+		deque.addToFront(2);
+		deque.addToFront(6);
+		deque.addToFront(5);
+		
+		deque.addToBack(11);
+		deque.addToBack(16);
+		deque.addToBack(12);
+		deque.addToBack(13);
+		deque.addToBack(14);
+		deque.addToBack(15);
+		
+		Iterator<Integer> foreward = deque.iterator();
+		System.out.print("Front| ");
+		while(foreward.hasNext()){
+			System.out.print(foreward.next() + " ");
+		}
+		System.out.println("|Back");
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		
+		System.out.println();
+		
+		System.out.println(deque);
+		
+		System.out.println("\nReverse Iterator");
+		
+		Iterator<Integer> backward = deque.revIterator();
+		System.out.print("Back| ");
+		while(backward.hasNext()){
+			System.out.print(backward.next() + " ");
+		}
+		System.out.println("|Front");
+		System.out.println(deque.size());
+		System.out.println(deque.getCapacity());
+		
+		System.out.println();
+		
+		System.out.println("End");
+		assertTrue(true);
+	}
+
+	@Test
+	public void newDequeTest() {
+		
+		
+	}
+
+}
